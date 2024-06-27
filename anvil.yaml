@@ -3,9 +3,27 @@ package_name: restaurant
 name: restaurant
 startup_form: Form1
 renamed: true
-runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox, server_spec: null}
 dependencies: []
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
+db_schema:
+  categories:
+    client: none
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: price
+      admin_ui: {width: 200, order: 1}
+      type: number
+    - name: image
+      admin_ui: {width: 200, order: 2}
+      type: media
+    - name: description
+      admin_ui: {width: 200, order: 3}
+      type: string
+    title: categories
