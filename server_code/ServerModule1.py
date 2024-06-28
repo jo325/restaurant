@@ -7,4 +7,4 @@ import anvil.server
 def get_category():
    
     items = list(app_tables.categories.search())
-    return [(item['name'], item['image'], item['price'], item['description']) for item in items]
+    return [(item['name'], item['image'], item['price']) for item in items]
