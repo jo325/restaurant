@@ -27,7 +27,7 @@ class ItemTemplatemenu(ItemTemplatemenuTemplate):
 
   def add_to_order_click(self, **event_args):
     """This method is called when the button is clicked"""
-    selected_item = self.repeating_panel_menu.selected_item
+    
     if selected_item:
       new_order_item = {
         'item': selected_item['name'],
