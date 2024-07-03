@@ -26,13 +26,9 @@ class ItemTemplatemenu(ItemTemplatemenuTemplate):
     self.counter_label.text = str(self.counter_value)
 
   def add_to_order_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    
-    if selected_item:
-      new_order_item = {
-        'item': selected_item['name'],
-        'price': selected_item['price'],
-        'quantity': 1
-      }
-      self.repeating_panel_order.items.append(new_order_item)
+     name = self.item['name']
+     price = self.item['price']
+     quantity = self.counter_value.numerator
+
+     anvil.server.call('add_to_cart',name,price,quantity)
 

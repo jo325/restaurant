@@ -2,11 +2,11 @@ is_package: true
 container: {type: ColumnPanel}
 components:
 - name: outlined_card_1
-  properties: {role: outlined-card, col_widths: '{"TRVHYS":10,"LPOLPL":15,"NGAKCF":35,"RQCHBT":45,"XGAWNJ":15}'}
+  properties: {role: elevated-card, col_widths: '{"TRVHYS":10,"LPOLPL":15,"NGAKCF":35,"RQCHBT":45,"XGAWNJ":15}'}
   type: ColumnPanel
   layout_properties: {grid_position: 'TTNTMO,ZOCAOO'}
   components:
-  - name: label_1
+  - name: label_name
     properties: {bold: true, align: left}
     type: Label
     layout_properties: {grid_position: 'MNJEEF,TRVHYS'}
@@ -16,7 +16,7 @@ components:
     properties: {text: RS, bold: true, align: right}
     type: Label
     layout_properties: {grid_position: 'MNJEEF,LPOLPL'}
-  - name: label_3
+  - name: label_price
     properties: {bold: true}
     type: Label
     layout_properties: {grid_position: 'MNJEEF,NGAKCF'}
@@ -50,3 +50,4 @@ components:
     type: Button
     layout_properties: {grid_position: 'ZVMBDL,XGAWNJ'}
     event_bindings: {click: add_to_order_click}
+  data_bindings: []
