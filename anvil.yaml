@@ -1,7 +1,7 @@
 allow_embedding: false
 package_name: restaurant
 name: restaurant
-startup_form: Form1
+startup_form: null
 renamed: true
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox, server_spec: null}
 dependencies: []
@@ -10,7 +10,7 @@ services:
   client_config: {}
   server_config: {}
 db_schema:
-  categories:
+  menu_items:
     client: none
     server: full
     columns:
@@ -20,10 +20,33 @@ db_schema:
     - name: price
       admin_ui: {width: 200, order: 1}
       type: number
-    - name: image
+    title: menu_items
+  orders_:
+    client: none
+    server: full
+    columns:
+    - name: table_number
+      admin_ui: {width: 200, order: 0}
+      type: number
+    - name: ' timestamp'
+      admin_ui: {width: 200, order: 1}
+      type: datetime
+    - name: status
       admin_ui: {width: 200, order: 2}
-      type: media
-    - name: description
-      admin_ui: {width: 200, order: 3}
       type: string
-    title: categories
+    title: 'orders '
+  order_items:
+    client: none
+    server: full
+    columns:
+    - name: order
+      admin_ui: {width: 200, order: 0}
+      type: string
+    - name: item
+      admin_ui: {width: 200, order: 1}
+      type: string
+    - name: ' quantity'
+      admin_ui: {width: 200, order: 2}
+      type: number
+    title: order_items
+startup: {type: form, module: MainForm}

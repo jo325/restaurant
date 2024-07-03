@@ -1,0 +1,32 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - name: column_panel_1
+    properties: {}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'WHCIMV,BKALEL'}
+    components:
+    - name: repeating_panel_menu
+      properties: {item_template: MainForm.ItemTemplate2}
+      type: RepeatingPanel
+      layout_properties: {grid_position: 'CRNLCY,SEXJCA'}
+  - name: flow_panel_1
+    properties: {}
+    type: FlowPanel
+    layout_properties: {grid_position: 'WHCIMV,KKMRMJ'}
+    components:
+    - name: repeating_panel_1
+      properties: {item_template: MainForm.ItemTemplate1}
+      type: RepeatingPanel
+      layout_properties: {width: 352.7880244140625}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}

@@ -4,7 +4,6 @@ from anvil.tables import app_tables
 import anvil.server
 
 @anvil.server.callable
-def get_category():
-   
-    items = list(app_tables.categories.search())
-    return [(item['name'], item['image'], item['price']) for item in items]
+def get_menu_items():
+    """Retrieve all menu items from the database."""
+    return app_tables.menu_items.search()
