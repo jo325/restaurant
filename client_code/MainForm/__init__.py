@@ -10,7 +10,7 @@ class MainForm(MainFormTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.selected_menu_item = None 
+    self.item = anvil.server.call('get_cart')
     self.load_menu_items()
     
   def load_menu_items(self):
@@ -21,6 +21,11 @@ class MainForm(MainFormTemplate):
     # Any code you write here will run before the form opens.
 
   def add_to_order(self):
-      if self.selected_menu_item:
-        self.item = anvil.server.call('get_cart')
-        self.repeating_panel_order.items=
+      if self.item:
+        new_order_item = {
+            'item': self.item['name'],
+            'price': self.item['price'],
+            'quantity': self.item['quantity']
+        }
+        self.repeating_panel_order.items.append(new_order_item)
+        #self.repeating_panel_order.items= self.item
