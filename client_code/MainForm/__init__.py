@@ -17,3 +17,13 @@ class MainForm(MainFormTemplate):
     menu_items = anvil.server.call('get_menu_items')
     self.repeating_panel_menu.items = menu_items
     # Any code you write here will run before the form opens.
+
+  def add_to_order_click(self, **event_args):
+    selected_item = self.repeating_panel_menu.selected_item
+    if selected_item:
+      new_order_item = {
+        'item': selected_item['name'],
+        'price': selected_item['price'],
+        'quantity': 1
+      }
+      self.repeating_panel_order.items.append(new_order_item)
