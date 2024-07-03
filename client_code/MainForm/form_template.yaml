@@ -4,7 +4,7 @@ container:
   properties: {html: '@theme:standard-page.html'}
 components:
 - type: ColumnPanel
-  properties: {col_widths: '{"BKALEL":30,"KKMRMJ":30}'}
+  properties: {col_widths: '{"BKALEL":35,"KKMRMJ":25}'}
   name: content_panel
   layout_properties: {slot: default}
   components:
@@ -22,10 +22,18 @@ components:
     type: FlowPanel
     layout_properties: {grid_position: 'WHCIMV,KKMRMJ'}
     components:
-    - name: repeating_panel_order
-      properties: {item_template: MainForm.ItemTemplateorder}
-      type: RepeatingPanel
-      layout_properties: {width: 352.7880244140625}
+    - name: label_1
+      properties: {text: 'table no:', bold: true}
+      type: Label
+      layout_properties: {}
+    - name: text_box_table
+      properties: {}
+      type: TextBox
+  - name: place_order
+    properties: {text: placed, role: filled-button}
+    type: Button
+    layout_properties: {grid_position: 'WHCIMV,KKMRMJ YUQIRD,WLZPRZ'}
+    event_bindings: {click: place_order_click}
 - type: FlowPanel
   properties: {}
   name: navbar_links

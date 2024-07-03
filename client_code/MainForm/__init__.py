@@ -20,12 +20,10 @@ class MainForm(MainFormTemplate):
     self.add_to_order()
     # Any code you write here will run before the form opens.
 
-  def add_to_order(self):
-      if self.item:
-        new_order_item = {
-            'item': self.item['name'],
-            'price': self.item['price'],
-            'quantity': self.item['quantity']
-        }
-        self.repeating_panel_order.items.append(new_order_item)
-        #self.repeating_panel_order.items= self.item
+  def place_order_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    order_items = self.item
+    table_number = self.text_box_table.text
+    anvil.server.call('place_order',order_items,table_number)
+
+  

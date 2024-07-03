@@ -2,6 +2,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 import anvil.server
+from datetime import datetime
 
 @anvil.server.callable
 def get_menu_items():
@@ -23,3 +24,21 @@ def get_cart():
     # Retrieve the cart from the session
     cart = anvil.server.session.get('cart', [])
     return cart
+
+@anvil.server.callable
+def place_order(table_number, order_items):
+    """Place a new order in the database."""
+    new_order = app_tables.orders.add_row(
+        table_number=table_number,
+        timestamp=datetime.now(),
+        status='Pending'
+    )
+    
+    for item in order_items:
+        app_tables.order_items.add_row(
+            order=new_order,
+            item=item['item'],
+            quantity=item['quantity']
+        )
+    
+    return new_order
