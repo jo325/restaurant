@@ -1,8 +1,8 @@
 unique_ids:
   forms:
     MainForm: '1719976670153571808640368.2559'
-    MainForm.ItemTemplate1: '1719977428290224763875616.55954'
-    MainForm.ItemTemplate2: '1719978646602942680768610.5541'
+    MainForm.ItemTemplatemenu: '1719978646602942680768610.5541'
+    MainForm.ItemTemplateorder: '1719977428290224763875616.55954'
   modules: {}
   server_modules:
     ServerModule1: '1719464039826519093943359.86694'
