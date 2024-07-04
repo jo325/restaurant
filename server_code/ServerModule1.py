@@ -27,18 +27,18 @@ def get_cart():
 
 @anvil.server.callable
 def place_order(table_number, order_items):
+    #new_order=[]
+    items =None
     """Place a new order in the database."""
     new_order = app_tables.orders.add_row(
         table_no=table_number,
         timestamp=datetime.now(),
         status='Pending'
     )
-    
-    for item in order_items:
-        app_tables.order_items.add_row(
-            order=new_order,
-            item=item['item'],
-            quantity=item['quantity']
+    for items in order_items:
+       app_tables.order_items.add_row(
+          order_id = new_order,
+          item = anvil.server.call('get_cart')
         )
     
     return new_order

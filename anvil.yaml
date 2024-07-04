@@ -7,8 +7,8 @@ runtime_options: {version: 2, client_version: '3', server_version: python3-sandb
 dependencies: []
 services:
 - source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
+  client_config: {enable_v2: true}
+  server_config: {auto_create_missing_columns: true}
 db_schema:
   menu_items:
     client: none
@@ -25,15 +25,12 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: order
-      admin_ui: {width: 200, order: 0}
-      type: string
     - name: item
       admin_ui: {width: 200, order: 1}
       type: string
-    - name: ' quantity'
-      admin_ui: {width: 200, order: 2}
-      type: number
+    - name: order_id
+      admin_ui: {order: 0, width: 200}
+      type: string
     title: order_items
   orders:
     client: none
