@@ -23,7 +23,7 @@ class MainForm(MainFormTemplate):
   def place_order_click(self, **event_args):
     """This method is called when the button is clicked"""
     order_items = self.item
-    table_number = self.text_box_table.numerator
-    anvil.server.call('place_order',order_items,table_number)
+    table_number = self.text_box_table.text
+    anvil.server.call('place_order',table_number,order_items)
 
   

@@ -39,14 +39,14 @@ db_schema:
     client: none
     server: full
     columns:
-    - name: table_number
-      admin_ui: {width: 200, order: 0}
-      type: number
-    - name: ' timestamp'
-      admin_ui: {width: 200, order: 1}
+    - name: timestamp
+      admin_ui: {order: 1, width: 200}
       type: datetime
     - name: status
       admin_ui: {width: 200, order: 2}
+      type: string
+    - name: table_no
+      admin_ui: {width: 200, order: -1}
       type: string
     title: orders
 startup: {type: form, module: MainForm}

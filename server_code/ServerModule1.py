@@ -29,7 +29,7 @@ def get_cart():
 def place_order(table_number, order_items):
     """Place a new order in the database."""
     new_order = app_tables.orders.add_row(
-        table_number=table_number,
+        table_no=table_number,
         timestamp=datetime.now(),
         status='Pending'
     )
