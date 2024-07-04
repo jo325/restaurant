@@ -17,13 +17,13 @@ class MainForm(MainFormTemplate):
     # Load menu items from the database
     menu_items = anvil.server.call('get_menu_items')
     self.repeating_panel_menu.items = menu_items
-    self.add_to_order()
+   
     # Any code you write here will run before the form opens.
 
   def place_order_click(self, **event_args):
     """This method is called when the button is clicked"""
     order_items = self.item
-    table_number = self.text_box_table.text
+    table_number = self.text_box_table.numerator
     anvil.server.call('place_order',order_items,table_number)
 
   

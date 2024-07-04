@@ -26,8 +26,8 @@ class ItemTemplatemenu(ItemTemplatemenuTemplate):
     self.counter_label.text = str(self.counter_value)
 
   def add_to_order_click(self, **event_args):
-     name = self.item['name']
-     price = self.item['price']
+     name = self.label_name
+     price = self.label_price
      quantity = self.counter_value.numerator
 
      anvil.server.call('add_to_cart',name,price,quantity)
