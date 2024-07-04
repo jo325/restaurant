@@ -4,7 +4,7 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-
+from ..shared_data import shared_data
 
 class MainForm(MainFormTemplate):
   def __init__(self, **properties):
@@ -22,8 +22,16 @@ class MainForm(MainFormTemplate):
 
   def place_order_click(self, **event_args):
     """This method is called when the button is clicked"""
-   
-    table_number = self.text_box_table.text
-    anvil.server.call('place_order',table_number,self.item)
+    
+    table_number = self.text_box_table
+    shared_data.set_shared_data( table_number)
+    
+    #table_number = self.text_box_table.text
+    #order_infor =anvil.server.call('place_order',table_number,self.item)
+     
+
+  def status_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    open_form('cookstaff')
 
   

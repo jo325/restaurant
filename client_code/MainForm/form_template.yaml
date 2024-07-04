@@ -38,3 +38,9 @@ components:
   properties: {}
   name: navbar_links
   layout_properties: {slot: nav-right}
+  components:
+  - name: status
+    properties: {text: status}
+    type: Link
+    layout_properties: {}
+    event_bindings: {click: status_click}

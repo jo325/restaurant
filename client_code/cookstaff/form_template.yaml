@@ -1,0 +1,12 @@
+container: {type: ColumnPanel}
+components:
+- name: column_panel_1
+  properties: {}
+  type: ColumnPanel
+  layout_properties: {grid_position: 'SNLNVR,TAAHSF'}
+  components:
+  - name: card_1
+    properties: {role: outlined-card}
+    type: ColumnPanel
+    layout_properties: {grid_position: 'JSVGWR,EIXEGU'}
+is_package: true

@@ -2,7 +2,9 @@ unique_ids:
   forms:
     MainForm: '1719976670153571808640368.2559'
     MainForm.ItemTemplatemenu: '1719978646602942680768610.5541'
-  modules: {}
+    cookstaff: '1720100829370317919853075.8693'
+  modules:
+    shared_data: '1720105277077156330971634.62372'
   server_modules:
     ServerModule1: '1719464039826519093943359.86694'
   assets:

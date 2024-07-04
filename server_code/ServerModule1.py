@@ -44,3 +44,19 @@ def place_order(table_number, order_items):
         )
     
     return new_order
+
+@anvil.server.callable
+def add_pending(self, table_number):
+  
+  if 'pend' not in anvil.server.session:
+      anvil.server.session['pend'] = []
+    
+    # Add the item to the cart
+  anvil.server.session['pend'].append({'table_number':table_number ,'status':'pending'})
+
+@anvil.server.callable
+def get_pending():
+   cart = anvil.server.session.get('pend', [])
+   return cart
+  
+  
